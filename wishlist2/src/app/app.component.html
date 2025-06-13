@@ -22,10 +22,7 @@
     </form>
     <div class="row mt-3">
       <div class="col-auto">
-        <select
-          class="form-select"
-          [(ngModel)]="listFilter"
-        >
+        <select class="form-select" [(ngModel)]="listFilter">
           <option value="0">All</option>
           <option value="1">Unfulfilled</option>
           <option value="2">Fulfilled</option>
@@ -34,26 +31,7 @@
     </div>
 
     <div class="row mt-3">
-      <div *ngIf="visibleItems.length === 0; else showItems">
-        There are no wishes to display
-      </div>
-
-      <ng-template #showItems>
-        <ul *ngIf="items.length > 0" class="wish-list">
-          <li *ngFor="let item of visibleItems">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input
-                  type="checkbox"
-                  class="checkbox me-2"
-                  [checked]="item.isComplete"
-                  (click)="toggleItem(item)"
-                />{{ item.wishText }}
-              </label>
-            </div>
-          </li>
-        </ul>
-      </ng-template>
+      <wish-list [wishes]="visibleItems"></wish-list>
     </div>
   </div>
 </div>

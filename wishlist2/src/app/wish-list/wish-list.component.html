@@ -1,0 +1,20 @@
+<div *ngIf="wishes.length === 0; else showItems">
+  There are no wishes to display
+</div>
+
+<ng-template #showItems>
+  <ul *ngIf="wishes.length > 0" class="wish-list">
+    <li *ngFor="let item of wishes">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input
+            type="checkbox"
+            class="checkbox me-2"
+            [checked]="item.isComplete"
+            (click)="toggleItem(item)"
+          />{{ item.wishText }}
+        </label>
+      </div>
+    </li>
+  </ul>
+</ng-template>
