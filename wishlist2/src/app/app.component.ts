@@ -12,11 +12,27 @@ export class AppComponent {
     new WishItem('Learn Python'),
     new WishItem('Debug commits', true)
   ]
-  
-  title = 'My whish';
 
-  addNewWish(){
-    console.log('add wish');
+  title = 'My whish';
+  wishText = '';
+  listFilter: String = '0';
+
+  get visibleItems(): WishItem[] {
+    if (this.listFilter === '0') {
+      return this.items;
+    }
+    if (this.listFilter === '1') {
+      return this.items.filter(wish => !wish.isComplete);
+    }
+    if (this.listFilter === '2') {
+      return this.items.filter(wish => wish.isComplete);
+    }
+    return this.items;
+  }
+
+  addNewWish() {
+    this.items.push(new WishItem(this.wishText));
+    this.wishText = '';
   }
 
   toggleItem(item: WishItem) {
