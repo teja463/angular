@@ -14,7 +14,6 @@ export class AppComponent {
   ]
 
   title = 'My whish';
-  wishText = '';
   listFilter: String = '0';
 
   get visibleItems(): WishItem[] {
@@ -30,9 +29,8 @@ export class AppComponent {
     return this.items;
   }
 
-  addNewWish() {
-    this.items.push(new WishItem(this.wishText));
-    this.wishText = '';
+  addNewWish(wish: string) {
+    this.items.push(new WishItem(wish));
   }
 
 }
