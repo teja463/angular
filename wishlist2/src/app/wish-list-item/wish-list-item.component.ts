@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WishItem } from 'src/shared/models/WishItem';
+import { EventService } from 'src/shared/services/EventService';
 
 @Component({
   selector: 'wish-list-item',
@@ -8,14 +9,18 @@ import { WishItem } from 'src/shared/models/WishItem';
 })
 export class WishListItemComponent implements OnInit {
 
-  @Input() wish!: WishItem;
+  constructor(private events: EventService) { }
 
-  constructor() { }
+  @Input() wish!: WishItem;
 
   ngOnInit(): void {
   }
 
   toggle() {
     this.wish.isComplete = !this.wish.isComplete;
+  }
+
+  removeWish() {
+    this.events.emit('removeWish', this.wish);
   }
 }

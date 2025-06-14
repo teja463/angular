@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WishItem } from 'src/shared/models/WishItem';
+import { EventService } from 'src/shared/services/EventService';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,13 @@ import { WishItem } from 'src/shared/models/WishItem';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private events: EventService) {
+    this.events.listen('removeWish', (wish: any) => {
+      const index = this.items.indexOf(wish);
+      this.items.splice(index, 1);
+    })
+  }
 
   items: WishItem[] = [
     new WishItem('Learn Angular'),
