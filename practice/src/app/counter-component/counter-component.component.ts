@@ -7,15 +7,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CounterComponentComponent implements OnInit {
 
-  @Input() counter: number = 0;
+  @Input() counter!: number;
   @Output() counterChange = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  increment() {
-    this.counterChange.emit(this.counter);
+  increment(event: any) {
+    console.log(event)
+    this.counterChange.emit(++this.counter);
   }
 
   decrement() {
