@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'wish-filter',
@@ -7,17 +7,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class WishFilterComponent implements OnInit {
 
-  @Output() filter = new EventEmitter<string>();
+  @Input() filter: any;
+  @Output() filterChange = new EventEmitter<string>();
 
   constructor() { }
 
+  listFilter: string = '0';
+  
   ngOnInit(): void {
+    this.changeFilter(this.listFilter);
   }
 
-  listFilter: String = '0';
 
   changeFilter(value: string){
-    this.filter.emit(value);
+    this.filterChange.emit(value);
     console.log('filter changed', value)
   }
 }
