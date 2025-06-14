@@ -5,18 +5,7 @@
 
   <ng-template #showItems>
     <ul *ngIf="wishes.length > 0" class="wish-list">
-      <li *ngFor="let item of wishes">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input
-              type="checkbox"
-              class="checkbox me-2"
-              [checked]="item.isComplete"
-              (click)="toggleItem(item)"
-            />{{ item.wishText }}
-          </label>
-        </div>
-      </li>
+      <wish-list-item *ngFor="let item of wishes" [wishText]="item.wishText" [(isComplete)]="item.isComplete"></wish-list-item>
     </ul>
   </ng-template>
 </div>

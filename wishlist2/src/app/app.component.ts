@@ -7,6 +7,7 @@ import { WishItem } from 'src/shared/models/WishItem';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   items: WishItem[] = [
     new WishItem('Learn Angular'),
     new WishItem('Learn Python'),
@@ -32,4 +33,7 @@ export class AppComponent {
     this.items.push(new WishItem(wish));
   }
 
+  print() {
+    console.log('items', this.items);
+  }
 }
