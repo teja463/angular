@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { WishItem } from 'src/shared/models/WishItem';
 
 @Component({
   selector: 'wish-list-item',
@@ -7,9 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class WishListItemComponent implements OnInit {
 
-  @Input() wishText!: string;
-  @Input() isComplete!: boolean;
-  @Output() isCompleteChange = new EventEmitter<boolean>();
+  @Input() wish!: WishItem;
 
   constructor() { }
 
@@ -17,7 +16,6 @@ export class WishListItemComponent implements OnInit {
   }
 
   toggle() {
-    console.log('toggle')
-    this.isCompleteChange.emit(!this.isComplete);
+    this.wish.isComplete = !this.wish.isComplete;
   }
 }

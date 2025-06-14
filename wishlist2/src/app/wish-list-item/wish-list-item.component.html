@@ -1,12 +1,12 @@
 <li>
   <div class="form-check">
-    <label class="form-check-label" [ngClass]="isComplete ? ['strikeout', 'text-muted'] : ''">
+    <label class="form-check-label" [ngClass]="wish.isComplete ? ['strikeout', 'text-muted'] : ''">
       <input
         type="checkbox"
         class="checkbox me-2"
-        [checked]="isComplete"
+        [checked]="wish.isComplete"
         (click)="toggle()"
-      />{{ wishText }}
+      />{{ wish.wishText }}
     </label>
   </div>
 </li>
