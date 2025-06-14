@@ -1,2 +1,18 @@
-<input type="text" [(ngModel)]="name" (ngModelChange)="logName($event)" placeholder="type your name here" />
-<h2>Name: {{ name }}</h2>
+<div class="container mt-4">
+  <div class="row">
+    <label for="" class="form-label">Enter text</label>
+    <input
+      class="form-control"
+      type="text"
+      [(ngModel)]="name"
+      (ngModelChange)="logName($event)"
+    />
+  </div>
+  <div class="mt-2">
+    <b>Name: {{ name }}</b>
+    <upper-case-component [name]="name"></upper-case-component>
+  </div>
+  <div>
+    <counter-component [(counter)]="counter"></counter-component>
+  </div>
+</div>

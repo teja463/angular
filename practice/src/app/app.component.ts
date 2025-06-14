@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   name: string ='';
+  counter: number = 0;
 
   logName(event: any){
     console.log('name changed', event);
