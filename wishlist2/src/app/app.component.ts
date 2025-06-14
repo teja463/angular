@@ -13,8 +13,7 @@ export class AppComponent {
     new WishItem('Debug commits', true)
   ]
 
-  title = 'My whish';
-  listFilter: String = '0';
+  listFilter = '0';
 
   get visibleItems(): WishItem[] {
     if (this.listFilter === '0') {
