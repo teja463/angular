@@ -1,0 +1,5 @@
+[
+  { "wishText": "Learn Angular", "isComplete": false },
+  { "wishText": "Learn Python", "isComplete": false },
+  { "wishText": "Debug commits", "isComplete": true }
+]
