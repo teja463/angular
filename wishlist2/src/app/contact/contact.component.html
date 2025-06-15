@@ -28,6 +28,9 @@
       <small *ngIf="contactForm.get('email')?.hasError('email')">
         Enter a valid email
       </small>
+      <small *ngIf="contactForm.get('email')?.hasError('invalidDomain')">
+        Invalid domain
+      </small>
     </div>
   </div>
   <div class="mb-3">

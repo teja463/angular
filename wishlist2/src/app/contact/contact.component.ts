@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { invalidDomainValidator } from './invalidDomainValidator';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +16,7 @@ export class ContactComponent implements OnInit {
 
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email, invalidDomainValidator]),
     message: new FormControl('', [Validators.required, Validators.minLength(10)])
   })
 
