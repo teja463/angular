@@ -1,0 +1,22 @@
+<div class="container">
+  <div>
+    <add-wish-form (addWish)="addNewWish($event)"></add-wish-form>
+
+    <div class="row mt-3">
+      <wish-filter [(filter)]="listFilter"></wish-filter>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-sm-4">
+        <wish-list [wishes]="visibleItems"></wish-list>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" type="button" (click)="print()">
+        Print
+      </button>
+    </div>
+  </div>
+</div>
