@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { WishModule } from './wish/wish.module';
 import { ContactModule } from './contact/contact.module';
+import { AppRoutingModule } from './app-routing.module';
+import { TodosModule } from './todos/todos.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { ContactModule } from './contact/contact.module';
   imports: [
     BrowserModule,
     WishModule,
-    ContactModule
+    ContactModule,
+    TodosModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

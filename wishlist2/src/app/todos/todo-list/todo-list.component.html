@@ -1,0 +1,10 @@
+<div class="row">
+  <ul>
+    <todo-list-item
+      *ngFor="let todo of todos"
+      [todo]="todo"
+      (deleteTodoItem)="deleteTodo($event)"
+      (updateTodoItem)="updateTodo($event)"
+    ></todo-list-item>
+  </ul>
+</div>
