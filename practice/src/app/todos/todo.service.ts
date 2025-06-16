@@ -11,4 +11,8 @@ export class TodoService {
   getTodos(){
     return this.httpClient.get('http://localhost:8080/todos');
   }
+
+  deleteTodo(id: number){
+    return this.httpClient.delete(`http://localhost:8080/todos/${id}`)
+  }
 }

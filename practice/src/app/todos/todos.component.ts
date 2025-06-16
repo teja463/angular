@@ -22,4 +22,11 @@ export class TodosComponent implements OnInit {
     })
   }
 
+  deleteTodoItem(event: any) {
+    this.todoService.deleteTodo(event).subscribe(() => {
+      console.log('todo deleted');
+      this.todos = this.todos.filter(todo => todo.id !== event);
+    }, err => console.log('delete todo error', err))
+    console.log('event', event)
+  }
 }

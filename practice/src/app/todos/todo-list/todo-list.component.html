@@ -1,5 +1,14 @@
 <div class="row">
   <ul>
-    <li *ngFor="let todo of todos">{{ todo.text }}</li>
+    <li *ngFor="let todo of todos" class="row">
+      <div class="col-auto me-4">{{ todo.text }}</div>
+      <div class="col-auto">
+        <button
+          type="button"
+          class="btn-close"
+          (click)="deleteTodo(todo.id)"
+        ></button>
+      </div>
+    </li>
   </ul>
 </div>
