@@ -1,14 +1,9 @@
 <div class="row">
   <ul>
-    <li *ngFor="let todo of todos" class="row">
-      <div class="col-sm-4">{{ todo.text }}</div>
-      <div class="col-auto">
-        <button
-          type="button"
-          class="btn-close"
-          (click)="deleteTodo(todo.id)"
-        ></button>
-      </div>
-    </li>
+    <todo-list-item
+      *ngFor="let todo of todos"
+      [todo]="todo"
+      (deleteTodoItem)="deleteTodo($event)"
+    ></todo-list-item>
   </ul>
 </div>

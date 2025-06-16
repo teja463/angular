@@ -2,14 +2,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Todo } from 'src/shared/models/Todo';
 
 @Component({
-  selector: 'todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  selector: 'todo-list-item',
+  templateUrl: './todo-list-item.component.html',
+  styleUrls: ['./todo-list-item.component.css']
 })
-export class TodoListComponent implements OnInit {
+export class TodoListItemComponent implements OnInit {
 
-
-  @Input() todos!: Todo[];
+  @Input() todo!: Todo;
   @Output() deleteTodoItem = new EventEmitter<any>();
 
   constructor() { }
@@ -17,9 +16,8 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteTodo(id: any) {
+  deleteTodo(id: number) {
     console.log('id', id);
     this.deleteTodoItem.emit(id);
   }
-
 }
