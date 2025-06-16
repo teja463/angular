@@ -1,2 +1,20 @@
-<h2>Todos</h2>
-<todo-list [todos]="todos" (deleteTodoItem)="deleteTodoItem($event)"></todo-list>
+<h2 class="mt-4">Todos</h2>
+<form class="row mb-4 mt-2" (ngSubmit)="addTodo()">
+  <div class="col-sm-6">
+    <input
+      type="text"
+      name="todoText"
+      id="todoText"
+      class="form-control"
+      [(ngModel)]="todoText"
+    />
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Add Todo</button>
+  </div>
+</form>
+<div *ngIf="todos.length === 0">There are no Todos</div>
+<todo-list
+  [todos]="todos"
+  (deleteTodoItem)="deleteTodoItem($event)"
+></todo-list>

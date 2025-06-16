@@ -9,9 +9,11 @@ import { TodoService } from './todo.service';
 })
 export class TodosComponent implements OnInit {
 
+
   constructor(private todoService: TodoService) { }
 
   todos: Todo[] = [];
+  todoText: string = '';
 
   ngOnInit(): void {
     this.todoService.getTodos().subscribe((data: any) => {
@@ -28,5 +30,14 @@ export class TodosComponent implements OnInit {
       this.todos = this.todos.filter(todo => todo.id !== event);
     }, err => console.log('delete todo error', err))
     console.log('event', event)
+  }
+
+  addTodo() {
+    console.log('todoText', this.todoText);
+    this.todoService.addTodo(this.todoText).subscribe((data: any) => {
+      console.log('data', data);
+      this.todos.push(data);
+      this.todoText = '';
+    })
   }
 }

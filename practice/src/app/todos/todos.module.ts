@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TodosComponent } from './todos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,11 +13,11 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   ],
   imports: [
     CommonModule,
-
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
-    TodosComponent,
-    HttpClientModule
+    TodosComponent
   ]
 })
 export class TodosModule { }
