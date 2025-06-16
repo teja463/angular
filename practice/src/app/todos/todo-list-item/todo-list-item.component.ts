@@ -6,7 +6,7 @@ import { Todo } from 'src/shared/models/Todo';
   templateUrl: './todo-list-item.component.html',
   styleUrls: ['./todo-list-item.component.css']
 })
-export class TodoListItemComponent implements OnInit, OnChanges {
+export class TodoListItemComponent implements OnInit {
 
 
   @Input() todo!: Todo;
@@ -18,10 +18,10 @@ export class TodoListItemComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges): void {
+/*   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes', changes);
     this.editText = this.todo?.text;
-  }
+  } */
 
   ngOnInit(): void {
   }
