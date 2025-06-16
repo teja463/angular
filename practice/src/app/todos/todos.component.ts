@@ -26,18 +26,23 @@ export class TodosComponent implements OnInit {
 
   deleteTodoItem(event: any) {
     this.todoService.deleteTodo(event).subscribe(() => {
-      console.log('todo deleted');
       this.todos = this.todos.filter(todo => todo.id !== event);
     }, err => console.log('delete todo error', err))
-    console.log('event', event)
   }
 
   addTodo() {
-    console.log('todoText', this.todoText);
     this.todoService.addTodo(this.todoText).subscribe((data: any) => {
-      console.log('data', data);
       this.todos.push(data);
       this.todoText = '';
-    })
+    }, err => console.log('add todo error', err))
+  }
+
+  updateTodo(event: any) {
+    this.todoService.updateTodo(event).subscribe((data: any) => {
+      const t = this.todos.find(t => t.id === data.id)
+      if (t) {
+        t.text = data?.text;
+      }
+    }, err => console.log('update todo error', err))
   }
 }

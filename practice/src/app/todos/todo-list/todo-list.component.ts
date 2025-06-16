@@ -9,8 +9,10 @@ import { Todo } from 'src/shared/models/Todo';
 export class TodoListComponent implements OnInit {
 
 
+
   @Input() todos!: Todo[];
   @Output() deleteTodoItem = new EventEmitter<any>();
+  @Output() updateTodoItem = new EventEmitter<any>();
 
   constructor() { }
 
@@ -18,8 +20,13 @@ export class TodoListComponent implements OnInit {
   }
 
   deleteTodo(id: any) {
-    console.log('id', id);
+    console.log('todo list id', id);
     this.deleteTodoItem.emit(id);
+  }
+
+  updateTodo($event: any) {
+    console.log('edit obj', $event);
+    this.updateTodoItem.emit($event);
   }
 
 }

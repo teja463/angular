@@ -4,6 +4,7 @@
       *ngFor="let todo of todos"
       [todo]="todo"
       (deleteTodoItem)="deleteTodo($event)"
+      (updateTodoItem)="updateTodo($event)"
     ></todo-list-item>
   </ul>
 </div>

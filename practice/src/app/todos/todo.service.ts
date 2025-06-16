@@ -19,4 +19,9 @@ export class TodoService {
   addTodo(text: string){
     return this.httpClient.post('http://localhost:8080/todos', {text, complete: false});
   }
+
+  updateTodo(todo: any){
+    return this.httpClient.put('http://localhost:8080/todos', todo);
+  }
+
 }
