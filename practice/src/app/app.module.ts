@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { UpperCaseComponentComponent } from './upper-case-component/upper-case-component.component';
 import { CounterComponentComponent } from './counter-component/counter-component.component';
+import { TodosModule } from './todos/todos.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CounterComponentComponent } from './counter-component/counter-component
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    TodosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
