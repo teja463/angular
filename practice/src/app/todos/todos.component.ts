@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from 'src/shared/models/Todo';
 import { TodoService } from './todo.service';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-todos',
@@ -9,11 +10,22 @@ import { TodoService } from './todo.service';
 })
 export class TodosComponent implements OnInit {
 
+  
 
-  constructor(private todoService: TodoService) { }
+
+  constructor(private todoService: TodoService, private themeSvc: ThemeService) { }
 
   todos: Todo[] = [];
   todoText: string = '';
+
+  toggleTheme(){
+    console.log('toggling theme');
+    if(this.themeSvc.theme === 'dark'){
+      this.themeSvc.theme = 'light'
+    }else{
+      this.themeSvc.theme = 'dark'
+    }
+  }
 
   ngOnInit(): void {
     this.todoService.getTodos().subscribe((data: any) => {
