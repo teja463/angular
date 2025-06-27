@@ -8,8 +8,6 @@ import { Todo } from 'src/shared/models/Todo';
 })
 export class TodoListComponent implements OnInit {
 
-
-
   @Input() todos!: Todo[];
   @Output() deleteTodoItem = new EventEmitter<any>();
   @Output() updateTodoItem = new EventEmitter<any>();
