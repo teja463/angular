@@ -10,9 +10,7 @@
     <div class="mt-2">
       <p>{{ greeting }}</p>
       <p>
-        <button class="btn btn-primary" (click)="changeGreeting()">
-          Change Name
-        </button>
+        <app-button (btnClick)="changeGreeting()" text="Change Name" [bgColor]="color" textColor="white"></app-button>
       </p>
     </div>
   </div>

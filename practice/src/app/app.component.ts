@@ -5,13 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  
-  name: string ='';
+export class AppComponent implements OnInit {
+
+
+  name: string = '';
   counter: number = 0;
   greeting: string = 'Guest';
+  color= "dodgerblue";
 
-  constructor(){
+  constructor() {
     console.log('constructor')
   }
 
@@ -19,11 +21,15 @@ export class AppComponent implements OnInit{
     console.log('ngOnInit')
   }
 
-  logName(event: any){
+  logName(event: any) {
     console.log('name changed', event);
   }
 
-  changeGreeting(){
+  changeGreeting() {
     this.greeting = 'Teja';
+  }
+
+  clickHere($event: any) {
+    console.log('app click', $event)
   }
 }

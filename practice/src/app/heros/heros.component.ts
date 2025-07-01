@@ -12,7 +12,8 @@ export class HerosComponent implements OnInit {
   constructor(private heroSvc: HeroService) { }
 
   heros!: Hero[];
-
+  name: string = 'teja';
+  
   selectedHero? : Hero;
 
   ngOnInit(): void {

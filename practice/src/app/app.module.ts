@@ -7,12 +7,14 @@ import { UpperCaseComponentComponent } from './upper-case-component/upper-case-c
 import { CounterComponentComponent } from './counter-component/counter-component.component';
 import { TodosModule } from './todos/todos.module';
 import { HerosModule } from './heros/heros.module';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UpperCaseComponentComponent,
-    CounterComponentComponent
+    CounterComponentComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

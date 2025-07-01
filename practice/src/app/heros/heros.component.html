@@ -3,4 +3,4 @@
   <div *ngFor="let hero of heros" class="btn btn-light m-4" (click)="selectedHero = hero"><div>{{hero.name}}</div></div>
 </div>
 
-<hero-detail [hero]="selectedHero"></hero-detail>
+<hero-detail [hero]="selectedHero" name="name"></hero-detail>
