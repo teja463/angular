@@ -13,19 +13,12 @@ export class TodosComponent implements OnInit {
   
 
 
-  constructor(private todoService: TodoService, private themeSvc: ThemeService) { }
+  constructor(private todoService: TodoService, protected themeSvc: ThemeService) { }
 
   todos: Todo[] = [];
   todoText: string = '';
 
-  toggleTheme(){
-    console.log('toggling theme');
-    if(this.themeSvc.theme === 'dark'){
-      this.themeSvc.theme = 'light'
-    }else{
-      this.themeSvc.theme = 'dark'
-    }
-  }
+ 
 
   ngOnInit(): void {
     this.todoService.getTodos().subscribe((data: any) => {

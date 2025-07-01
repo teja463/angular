@@ -17,4 +17,13 @@ export class ThemeService {
   set theme(value) {
     this._theme = value;
   }
+
+  toggleTheme() {
+    console.log('toggling theme');
+    if (this._theme === 'dark') {
+      this._theme = 'light'
+    } else {
+      this._theme = 'dark'
+    }
+  }
 }
