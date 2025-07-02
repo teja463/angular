@@ -19,8 +19,8 @@
   (deleteTodoItem)="deleteTodoItem($event)"
   (updateTodoItem)="updateTodo($event)"
 ></todo-list>
-Shared Count {{themeSvc.count}}
-<app-button text="Shared Increase" (btnClick)="themeSvc.increase()"></app-button>
+Shared Count {{counterSvc.count}}
+<app-button text="Shared Increase" (btnClick)="counterSvc.increase()"></app-button>
 <!-- <button class="btn btn-secondary" (click)="themeSvc.increase()">Shared Increase</button> -->
 <br/>
 <app-button text="Toggle Theme" (btnClick)="themeSvc.toggleTheme()" bgColor="red"></app-button>

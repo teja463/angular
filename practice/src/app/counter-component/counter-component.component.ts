@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ThemeService } from '../theme.service';
+import { ThemeService } from '../shared/services/theme.service';
+import { CounterService } from '../shared/services/counter.service';
 
 @Component({
   selector: 'counter-component',
@@ -11,7 +12,7 @@ export class CounterComponentComponent implements OnInit {
   @Input() counter!: number;
   @Output() counterChange = new EventEmitter<number>();
 
-  constructor(public themeSvc: ThemeService) { }
+  constructor(public themeSvc: ThemeService, protected counterSvc: CounterService) { }
 
   ngOnInit(): void {
   }

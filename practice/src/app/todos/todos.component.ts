@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from 'src/app/shared/models/Todo';
 import { TodoService } from './todo.service';
-import { ThemeService } from '../theme.service';
+import { ThemeService } from '../shared/services/theme.service';
+import { CounterService } from '../shared/services/counter.service';
 
 @Component({
   selector: 'app-todos',
@@ -13,7 +14,7 @@ export class TodosComponent implements OnInit {
   
 
 
-  constructor(private todoService: TodoService, protected themeSvc: ThemeService) { }
+  constructor(private todoService: TodoService, protected themeSvc: ThemeService, protected counterSvc: CounterService) { }
 
   todos: Todo[] = [];
   todoText: string = '';
