@@ -8,6 +8,10 @@ export class ThemeService {
 
   private _theme: any = 'dark';
 
+  count = 0;
+  increase(){
+    this.count = ++this.count;
+  }
   constructor() { }
 
   get theme() {
