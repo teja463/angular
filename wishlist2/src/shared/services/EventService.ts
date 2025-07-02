@@ -12,13 +12,17 @@ export class EventService{
     this.subject.next({eventName, payload});
   }
 
-  listen(eventName: string, callback : (event : any) => void){
+  onDelete(){
+    return this.subject.asObservable();
+  }
+
+  /* listen(eventName: string, callback : (event : any) => void){
     this.subject.asObservable().subscribe((nextObj: any) => {
       console.log('nextObj', nextObj);
       if(eventName === nextObj.eventName){
         callback(nextObj.payload);
       }
     })
-  }
+  } */
 
 }

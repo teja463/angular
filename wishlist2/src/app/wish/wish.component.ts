@@ -10,12 +10,20 @@ import { WishItem } from 'src/shared/models/WishItem';
 })
 export class WishComponent implements OnInit {
 
+  items: WishItem[] = []
+
+  listFilter = '0';
 
   constructor(private events: EventService, private wishService: WishService) {
-    this.events.listen('removeWish', (wish: any) => {
+    /* this.events.listen('removeWish', (wish: any) => {
       const index = this.items.indexOf(wish);
       this.items.splice(index, 1);
-    })
+    }) */
+   this.events.onDelete().subscribe((item: any) => {
+      console.log('item',item)
+      const index = this.items.indexOf(item.payload);
+      this.items.splice(index, 1);
+   })
   }
 
   ngOnInit(): void {
@@ -28,9 +36,7 @@ export class WishComponent implements OnInit {
     })
   }
 
-  items: WishItem[] = []
 
-  listFilter = '0';
 
   get visibleItems(): WishItem[] {
     if (this.listFilter === '0') {
