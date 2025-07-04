@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from './shared/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
 
-  name: string = '';
+  name: string = 'default parent';
   counter: number = 0;
   greeting: string = 'Guest';
   color= "dodgerblue";
 
-  constructor() {
-    console.log('constructor')
+  constructor(protected themeSvc: ThemeService) {
   }
 
   ngOnInit(): void {

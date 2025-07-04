@@ -1,10 +1,4 @@
 .dark{
-  background-color: black;
-  color: white;
-}
-
-.comp{
-  border: 1px dashed black;
-  margin: 16px 0;
-  padding: 8px;
+  background-color: rgb(17, 16, 16);
+  color: rgb(241, 238, 238);
 }

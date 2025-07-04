@@ -7,18 +7,15 @@ import { Subscription } from 'rxjs';
   templateUrl: './counter-component.component.html',
   styleUrls: ['./counter-component.component.css']
 })
-export class CounterComponentComponent implements OnInit, OnDestroy {
+export class CounterComponentComponent {
 
   @Input() counter!: number;
   @Output() counterChange = new EventEmitter<number>();
 
-  theme = ''
-  themeSub!: Subscription;
-  constructor(public themeSvc: ThemeService, protected counterSvc: CounterService) { }
 
-  ngOnInit(): void {
-    this.themeSub = this.themeSvc.onThemeChange().subscribe(theme => this.theme = theme)
-  }
+  constructor(protected counterSvc: CounterService) { }
+
+
 
   increment(event: any) {
     console.log(event)
@@ -31,7 +28,4 @@ export class CounterComponentComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    this.themeSub.unsubscribe();
-  }
 }

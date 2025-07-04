@@ -1,5 +1,10 @@
 <div class="container mt-4">
-  <div class="comp">
+  <app-button
+    text="Toggle Theme"
+    bgColor="red"
+    (btnClick)="themeSvc.toggleTheme()"
+  ></app-button>
+  <app-box>
     <label for="" class="form-label">Enter text</label>
     <input
       class="form-control"
@@ -10,21 +15,24 @@
     <div class="mt-2">
       <p>{{ greeting }}</p>
       <p>
-        <app-button (btnClick)="changeGreeting()" text="Change Name" [bgColor]="color" textColor="white"></app-button>
+        <app-button
+          (btnClick)="changeGreeting()"
+          text="Change Name"
+          [bgColor]="color"
+          textColor="white"
+        ></app-button>
       </p>
     </div>
-  </div>
-  <div class="comp">
+  </app-box>
+  <app-box>
     <b>Name: {{ name }}</b>
     <upper-case-component [name]="name"></upper-case-component>
-  </div>
-  <div class="comp">
+  </app-box>
+  <app-box>
     <counter-component [(counter)]="counter"></counter-component>
-  </div>
-  <div class="comp">
+  </app-box>
+  <app-box>
     <app-todos></app-todos>
-  </div>
-  <div class="comp">
-    <app-heros ></app-heros>
-  </div>
+  </app-box>
+  <app-box> <app-heros></app-heros> </app-box>
 </div>

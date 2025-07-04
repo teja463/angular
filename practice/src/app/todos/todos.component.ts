@@ -14,7 +14,7 @@ export class TodosComponent implements OnInit {
   
 
 
-  constructor(private todoService: TodoService, protected themeSvc: ThemeService, protected counterSvc: CounterService) { }
+  constructor(private todoService: TodoService, protected counterSvc: CounterService) { }
 
   todos: Todo[] = [];
   todoText: string = '';
