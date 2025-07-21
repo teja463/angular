@@ -1,7 +1,5 @@
 <p>Hero Details</p>
 <div *ngIf="hero">
-
-  <h2>{{hero.id}}. {{hero.name}}</h2>
-  <input type="text" [(ngModel)]="hero.name" />
-  {{name}}
+  <h2>{{ hero.id }}. {{ hero.name }}</h2>
+  <input type="text" class="form-control" [(ngModel)]="hero.name" />
 </div>

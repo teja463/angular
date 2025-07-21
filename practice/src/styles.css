@@ -1,4 +1,13 @@
-.dark{
-  background-color: rgb(17, 16, 16);
-  color: rgb(241, 238, 238);
+:root {
+  --bg-dark: rgb(17, 16, 16);
+  --bg-dark-color: rgb(241, 238, 238);
+}
+.dark {
+  background-color: var(--bg-dark);
+  color: var(--bg-dark-color);
+
+  input[type='text'] {
+    background-color: var(--bg-dark);
+    color: var(--bg-dark-color);
+  }
 }
